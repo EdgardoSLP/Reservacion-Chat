@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="static/stylechatapp.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!--<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>-->
+ 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+ 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first 
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>-->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries 
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>-->
+
+
+
+    <script src="static/appjs.js"></script>
+
+</head>
+
+<body>
+
+    <!--Se creo el encabezado con las instrucciones en JS para ocultar el HEADER, solo que se vuelve a mostrar 
+        hasta que se regresa a top el scroll  -->
+    <div class="headtop" >
+        <div class="header" > 
+            <div class="appname" >Reservaciones Firebase</div>
+            <div class="space"></div>
+            <div class="search">
+                <img src="static/images/magnifying-glass-1083378_640.png" height="25px" width="25px" alt="Buscar">
+            </div>
+            <div class="submenu">
+                <img src="static/images/menu-145771_640.png" height="23px" width="23px" alt="Menu">
+            </div>
+        </div>
+    </div>
+
+    <div id="user-container">
+        <div hidden id="user-pic"></div>
+        <div hidden id="user-name"></div>
+        <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          Sign-out
+        </button>
+        <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+          <i class="material-icons">account_circle</i>Sign-in with Google
+        </button>
+      </div>
+
+    <!--Diseño del Encabezado de nuestra aplicación
+    --------------------------------------------------------------------------------->
+
+    <div  class="menu">
+        <!--<div class="camara">
+            <img src="static/images/camera-1085705_1280.png" height="23px" width="23px" alt="Cam">
+        </div>-->
+        <div id="bottom-line" class="chats" data-view="0">Reservaciones</div>
+        <!--<div id="bottom-line" class="estados" data-view="1">ESTADOS</div>
+        <div id="bottom-line" class="llamadas" data-view="2">LLAMADAS</div>-->
+    </div>
+    <!--Diseño del Menu de la aplicación en que se encuentran las pestañas de 
+        CHATS, ESTADOS y LLAMADAS, ya con los identificadores data-view para ser utilizados
+        en las funciones de clase y sirvan como identificadores.
+    -----------------------------------------------------------------------------------------
+    Se crearon Class Copy en cada uno de las secciones, para ser utilizadas en la funcion que activara
+    El Tab blanco de cada una de las secciones-->
+   
+
+    <div id="sendchats" class="principal">
+        <!--<div class="row-0"> 
+
+        </div>-->
+    </div>
+
+    <form id="send-message">
+        <div class="form">
+            <div class="name">
+                <input id="name" type="text" placeholder="Nombre ...">
+            </div>
+            <div class="message">
+                <input id="message" type="text" placeholder="Mensaje ...">
+            </div>
+            <!--<div class="horario">
+                <input id="horario" type="text" placeholder="Hora de reservación ...">
+            </div>-->
+            <div class="dvhorario">
+                <select name="horario" id="horario">
+                    <option value="" disabled selected hidden>Horario:</option>
+                    <option value="1">2:00 pm</option>
+                    <option value="2">3:00 pm</option>
+                    <option value="3">4:00 pm</option>
+                    <option value="4">5:00 pm</option>
+                    <option value="5">6:00 pm</option>
+                    <option value="6">7:00 pm</option>
+                    <option value="7">8:00 pm</option>
+                    <option value="8">9:00 pm</option>
+                    <option value="9">10:00 pm</option>
+                </select>
+            </div>
+            <div class="dvdia">
+                <input id="dia" type="date" min="2020-06-15" max="2020-06-30"/>
+            </div>
+            
+            <div class="enviar">
+                <div onclick="insert()">Enviar</div>
+            </div>
+        </div>
+    </form>
+
+
+
+  
+</body>
+
+</html>
